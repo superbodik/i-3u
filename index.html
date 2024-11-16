@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Открытка для любимой</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: radial-gradient(circle, #ff99cc, #ff3366);
+        font-family: 'Arial', sans-serif;
+        color: #fff;
+    }
+
+    .card {
+        position: relative;
+        width: 300px;
+        height: 400px;
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .heart {
+        position: absolute;
+        width: 100px;
+        height: 90px;
+        background: #ff4d88;
+        border-radius: 50% 50% 0 0;
+        transform: rotate(-45deg);
+        animation: beat 1.5s infinite;
+    }
+
+    .heart::after,
+    .heart::before {
+        content: '';
+        position: absolute;
+        width: 100px;
+        height: 90px;
+        background: #ff4d88;
+        border-radius: 50%;
+    }
+
+    .heart::before {
+        top: -50px;
+        left: 0;
+    }
+
+    .heart::after {
+        left: 50px;
+        top: 0;
+    }
+
+    @keyframes beat {
+        0%, 100% {
+            transform: scale(1) rotate(-45deg);
+        }
+        50% {
+            transform: scale(1.2) rotate(-45deg);
+        }
+    }
+
+    .message {
+        margin-top: 200px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        color: #ff3366;
+        padding: 20px;
+    }
+
+    .button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: #ff3366;
+        border: none;
+        border-radius: 20px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    .button:hover {
+        background: #ff6699;
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <div class="heart"></div>
+    <div class="message">
+        <p>Ты самая красивая и идеальная, солнышко! ❤️</p>
+        <p>Я верю в тебя, и у тебя всё обязательно получится!</p>
+    </div>
+    <button class="button" onclick="alert('Люблю тебя больше всего на свете! 💖')">Нажми сюда</button>
+</div>
+
+</body>
+</html>
